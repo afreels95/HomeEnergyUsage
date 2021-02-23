@@ -1,0 +1,19 @@
+version: '3'
+services:    
+    homeassistant:
+       container_name: home-assistant
+       image: homeassistant/home-assistant:stable
+       volumes:
+         - /home/user/Docker/HomeAssistant:/config  
+       restart: always
+       network_mode: host 
+    prometheus:
+        image: prom/prometheus
+        container_name: prometheus
+        volumes:
+            - /home/user/Docker/Prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+        ports:
+            - "9090:9090"
+
+
+    
