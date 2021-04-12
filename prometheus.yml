@@ -2,6 +2,13 @@ global:
   scrape_interval:     60s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
   evaluation_interval: 60s  # Evaluate rules every 15 seconds. The default is every 1 minute.
 
+remote_write:
+- url: <url from grafana cloud>
+  basic_auth:
+    username: <userid from grafana cloud>
+    password: <API_KEY from grafana cloud>
+    
+    
 # A scrape configuration containing exactly one endpoint to scrape:
 scrape_configs:
   - job_name: homeassistant
